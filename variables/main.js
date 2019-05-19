@@ -7,3 +7,6 @@ average = (algebra + geography + physics) / 3;
 
 console.log(average);
 
+let name = 'Марина';
+message = `Привет, мир! Меня зовут ${name}`;
+console.log(message);
