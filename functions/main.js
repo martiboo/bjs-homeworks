@@ -88,35 +88,51 @@ console.log(getAverageScore({
 //Задача 3
 
 function getPersonData(secretData) {
+
+    let personName = {};
     for (let prop in secretData) {
         let value = secretData[prop];
-        console.log(`Свойство ${prop}, значение: ${value}`)
+        let name = getName(value);
+        let key = getProp(prop);
+        personName[key] = name;
+    }
+    return personName;
+}
+
+function getName(number) {
+    if (number === 0) {
+        return 'Родриго';
+    }
+    else if (number === 1) {
+        return 'Эмильо';
     }
 }
 
-getPersonData({
-    aaa: 0,
-    bbb: 0
-});
+function getProp(letter) {
+    if (letter === 'aaa') {
+        return 'firstName';
+    }
+    else if (letter === 'bbb') {
+        return 'lastName';
+    }
+}
 
-/*
-console.log( getPersonData({
+console.log(getPersonData({
     aaa: 0,
     bbb: 0
 }));
 
-console.log( getPersonData({
+console.log(getPersonData({
     aaa: 1,
     bbb: 0
 }));
 
-console.log( getPersonData({
+console.log(getPersonData({
     aaa: 0,
     bbb: 1
 }));
 
-console.log( getPersonData({
+console.log(getPersonData({
     aaa: 1,
     bbb: 1
 }));
-*/
