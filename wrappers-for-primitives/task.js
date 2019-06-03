@@ -12,28 +12,22 @@ function calculateMortgage() {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
-    if (isNaN(percent) === true) {
+    let percentNumber = Number(percent);
+    if (isNaN(percentNumber) === true) {
         console.log(`Параметр Процентная ставка содержит неправильное значение ${percent}`);
-        percent = Number(percent);
-        if (isNaN(percent) === true) {
-            return;
-        }
+        return;
     }
 
-    if (isNaN(contribution) === true) {
+    let contributionNumber = Number(contribution);
+    if (isNaN(contributionNumber) === true) {
         console.log(`Параметр Первоначальный взнос содержит неправильное значение ${contribution}`);
-        percent = Number(contribution);
-        if (isNaN(contribution) === true) {
-            return;
-        }
+        return;
     }
 
-    if (isNaN(amount) === true) {
+    let amountNumber = Number(amount);
+    if (isNaN(amountNumber) === true) {
         console.log(`Параметр Сумма кредита содержит неправильное значение ${amount}`);
-        amount = Number(amount);
-        if (isNaN(amount) === true) {
-            return;
-        }
+        return;
     }
     
     let dateTransform = new Date(date);
@@ -58,15 +52,12 @@ function sayHello() {
 }
 
 function getGreeting(name) {
-    let greeting;
+    let value = name;
     if (name === undefined || name === '' || name === null) {
-        greeting = 'Привет, мир! Меня зовут Аноним';
-        console.log(greeting);
+        value='Аноним';
     }
-    else {
-        greeting = `Привет, мир! Меня зовут ${name}`;
-        console.log(greeting);
-    }
+    let greeting = `Привет, мир! Меня зовут ${value}`;
+    console.log(greeting);
     
     return greeting;
 }
